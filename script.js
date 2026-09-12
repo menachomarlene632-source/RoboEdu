@@ -44,7 +44,6 @@ let productosLista = [
 
 ];
 
-
 let carrito = [];
 
 
@@ -52,11 +51,25 @@ let carrito = [];
 
 function mostrarProductos(lista = productosLista) {
 
-    let contenedor = document.getElementById("listaProductos");
+    const contenedor = document.getElementById("listaProductos");
 
     contenedor.innerHTML = "";
 
-    lista.forEach((producto, indice) => {
+    if (lista.length === 0) {
+
+        contenedor.innerHTML = `
+            <div class="sin-resultados">
+                <h3>🔎 No se encontraron productos</h3>
+                <p>Prueba con otro nombre o categoría.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+    lista.forEach((producto) => {
+
+        const indiceReal = productosLista.indexOf(producto);
 
         contenedor.innerHTML += `
 
@@ -66,9 +79,7 @@ function mostrarProductos(lista = productosLista) {
                 ${producto.imagen}
             </div>
 
-            <h3>
-                ${producto.nombre}
-            </h3>
+            <h3>${producto.nombre}</h3>
 
             <p class="categoria">
                 ${producto.categoria}
@@ -78,7 +89,7 @@ function mostrarProductos(lista = productosLista) {
                 Bs ${producto.precio}
             </p>
 
-            <button onclick="agregarCarrito(${indice})">
+            <button onclick="agregarCarrito(${indiceReal})">
                 Agregar al carrito
             </button>
 
@@ -117,11 +128,13 @@ function mostrarCarrito() {
     }
 
     let total = 0;
+
     let mensaje = "🛒 TU CARRITO\n\n";
 
-    carrito.forEach(producto => {
+    carrito.forEach((producto, indice) => {
 
         mensaje +=
+            (indice + 1) + ". " +
             producto.nombre +
             " - Bs " +
             producto.precio +
@@ -139,19 +152,37 @@ function mostrarCarrito() {
 }
 
 
-/* BUSCAR */
+/* BUSCADOR */
 
 function buscarProductos() {
 
-    let texto =
-        document.getElementById("buscar").value.toLowerCase();
+    const input = document.getElementById("buscar");
 
-    let resultados = productosLista.filter(producto =>
+    const texto = input.value
+        .trim()
+        .toLowerCase();
 
-        producto.nombre.toLowerCase().includes(texto) ||
-        producto.categoria.toLowerCase().includes(texto)
+    if (texto === "") {
 
-    );
+        mostrarProductos(productosLista);
+
+        return;
+    }
+
+    const resultados = productosLista.filter(producto => {
+
+        const nombre =
+            producto.nombre.toLowerCase();
+
+        const categoria =
+            producto.categoria.toLowerCase();
+
+        return (
+            nombre.includes(texto) ||
+            categoria.includes(texto)
+        );
+
+    });
 
     mostrarProductos(resultados);
 
@@ -162,7 +193,7 @@ function buscarProductos() {
 
 function filtrar(categoria) {
 
-    let resultados =
+    const resultados =
         productosLista.filter(producto =>
             producto.categoria === categoria
         );
@@ -177,9 +208,11 @@ function filtrar(categoria) {
 }
 
 
-/* MOSTRAR TODOS */
+/* MOSTRAR TODOS LOS PRODUCTOS */
 
 function mostrarTodosProductos() {
+
+    document.getElementById("buscar").value = "";
 
     mostrarProductos(productosLista);
 
@@ -289,6 +322,6 @@ function mostrarPerfil() {
 }
 
 
-/* INICIAR */
+/* INICIAR PÁGINA */
 
-mostrarProductos();
+mostrarProductos(); 
