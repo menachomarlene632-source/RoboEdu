@@ -1,0 +1,663 @@
+/* ========================================
+   ROBOEDU - ESTILOS PRINCIPALES
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f7fb;
+    color: #222;
+    padding-bottom: 85px;
+}
+
+
+/* ========================================
+   ENCABEZADO
+======================================== */
+
+.header {
+    height: 145px;
+    background: linear-gradient(135deg, #3020d9, #4b35e8);
+    color: white;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding: 22px 16px;
+
+    border-radius: 0 0 30px 30px;
+}
+
+.menu-btn,
+.carrito {
+    border: none;
+    background: transparent;
+    color: white;
+
+    cursor: pointer;
+}
+
+.menu-btn {
+    font-size: 29px;
+}
+
+.carrito {
+    position: relative;
+    font-size: 25px;
+}
+
+.titulo {
+    flex: 1;
+    text-align: center;
+    padding: 0 8px;
+}
+
+.titulo h1 {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.titulo p {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.titulo span {
+    color: #19d394;
+    font-weight: bold;
+}
+
+
+/* CONTADOR DEL CARRITO */
+
+.carrito b {
+    position: absolute;
+
+    top: -9px;
+    right: -9px;
+
+    width: 21px;
+    height: 21px;
+
+    border-radius: 50%;
+
+    background: #19d394;
+    color: white;
+
+    font-size: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ========================================
+   MENÚ LATERAL
+======================================== */
+
+.menu {
+    position: fixed;
+
+    top: 0;
+    left: -290px;
+
+    width: 280px;
+    height: 100vh;
+
+    background: white;
+
+    z-index: 1000;
+
+    padding: 25px;
+
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
+
+    transition: left 0.3s ease;
+}
+
+.menu.abierto {
+    left: 0;
+}
+
+.menu .cerrar {
+    float: right;
+
+    border: none;
+    background: transparent;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+.menu h2 {
+    color: #3020d9;
+
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.menu a {
+    display: block;
+
+    padding: 16px;
+
+    margin-bottom: 7px;
+
+    border-radius: 12px;
+
+    color: #333;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.menu a:hover {
+    background: #eeeeff;
+    color: #3020d9;
+}
+
+
+/* ========================================
+   BANNER PRINCIPAL
+======================================== */
+
+.banner {
+    margin: 25px 14px 20px;
+
+    min-height: 285px;
+
+    padding: 28px 24px;
+
+    border-radius: 27px;
+
+    background: linear-gradient(
+        135deg,
+        #3020d9,
+        #4935e8
+    );
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 20px rgba(48, 32, 217, 0.18);
+}
+
+.banner-texto {
+    width: 62%;
+    max-width: 240px;
+}
+
+.banner h2 {
+    font-size: 28px;
+    line-height: 1.12;
+
+    margin-bottom: 17px;
+}
+
+.banner p {
+    font-size: 15px;
+    line-height: 1.45;
+
+    color: #f1f1ff;
+}
+
+.banner button {
+    margin-top: 20px;
+
+    padding: 13px 21px;
+
+    border: none;
+    border-radius: 25px;
+
+    background: #19d394;
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.banner button:active {
+    transform: scale(0.96);
+}
+
+.robot {
+    width: 38%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 90px;
+
+    animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ========================================
+   BUSCADOR
+======================================== */
+
+.buscador {
+    height: 58px;
+
+    margin: 0 14px 30px;
+
+    padding: 0 19px;
+
+    background: white;
+
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+}
+
+.buscador span {
+    font-size: 20px;
+}
+
+.buscador input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 15px;
+
+    color: #333;
+}
+
+.buscador input::placeholder {
+    color: #999;
+}
+
+
+/* ========================================
+   SECCIONES
+======================================== */
+
+section {
+    margin: 0 14px 30px;
+
+    scroll-margin-top: 15px;
+}
+
+.titulo-seccion {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.titulo-seccion h2 {
+    font-size: 21px;
+
+    color: #222;
+}
+
+.titulo-seccion button {
+    border: none;
+
+    background: transparent;
+
+    color: #5548d8;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   CATEGORÍAS
+======================================== */
+
+.categorias {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 11px;
+}
+
+.categoria-card {
+    height: 112px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    background: white;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: transform 0.2s;
+}
+
+.categoria-card:active {
+    transform: scale(0.94);
+}
+
+.categoria-card span {
+    font-size: 34px;
+
+    margin-bottom: 9px;
+}
+
+.categoria-card p {
+    font-size: 12px;
+
+    color: #333;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   PRODUCTOS
+======================================== */
+
+.productos {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.producto {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 11px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+
+    overflow: hidden;
+}
+
+.producto-imagen {
+    height: 125px;
+
+    border-radius: 15px;
+
+    background: #f0f1f6;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 58px;
+}
+
+.producto h3 {
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    line-height: 1.25;
+}
+
+.categoria {
+    margin-top: 5px;
+
+    color: #888;
+
+    font-size: 11px;
+}
+
+.precio {
+    margin-top: 8px;
+
+    color: #3020d9;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+.producto button {
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 10px 5px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #3020d9;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.producto button:active {
+    transform: scale(0.97);
+}
+
+
+/* ========================================
+   BARRA INFERIOR
+======================================== */
+
+.barra {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 76px;
+
+    background: white;
+
+    border-top: 1px solid #e5e5e5;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    z-index: 500;
+
+    box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.barra button {
+    border: none;
+
+    background: white;
+
+    color: #777;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+.barra button span {
+    display: block;
+
+    font-size: 25px;
+
+    margin-bottom: 4px;
+}
+
+.barra .activo {
+    color: #3020d9;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   EFECTOS DE BOTONES
+======================================== */
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus {
+    outline: none;
+}
+
+
+/* ========================================
+   CELULARES PEQUEÑOS
+======================================== */
+
+@media (max-width: 380px) {
+
+    .header {
+        height: 135px;
+        padding: 20px 12px;
+    }
+
+    .titulo h1 {
+        font-size: 25px;
+    }
+
+    .titulo p {
+        font-size: 11px;
+    }
+
+    .menu-btn {
+        font-size: 25px;
+    }
+
+    .carrito {
+        font-size: 22px;
+    }
+
+    .banner {
+        min-height: 270px;
+        padding: 24px 20px;
+    }
+
+    .banner-texto {
+        width: 65%;
+    }
+
+    .banner h2 {
+        font-size: 24px;
+    }
+
+    .banner p {
+        font-size: 13px;
+    }
+
+    .banner button {
+        padding: 11px 17px;
+        font-size: 12px;
+    }
+
+    .robot {
+        font-size: 68px;
+    }
+
+    .categoria-card {
+        height: 100px;
+    }
+
+    .categoria-card span {
+        font-size: 30px;
+    }
+
+    .categoria-card p {
+        font-size: 11px;
+    }
+
+    .producto-imagen {
+        height: 105px;
+    }
+
+}
+
+
+/* ========================================
+   PANTALLAS UN POCO MÁS GRANDES
+======================================== */
+
+@media (min-width: 600px) {
+
+    body {
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .barra {
+        max-width: 600px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}

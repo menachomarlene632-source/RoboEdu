@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>RoboEdu</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  
+
+    <!-- ENCABEZADO -->
+    <header class="header">
+
+        <button class="menu-btn" onclick="abrirMenu()">☰</button>
+
+        <div class="titulo">
+            <h1>RoboEdu</h1>
+
+            <p>
+                Componentes para
+                <span>Robótica Educativa</span>
+            </p>
+        </div>
+
+        <button class="carrito" onclick="mostrarCarrito()">
+            🛒
+            <b id="contador">0</b>
+        </button>
+
+    </header>
+
+
+    <!-- MENÚ LATERAL -->
+
+    <div id="menu" class="menu">
+
+        <button class="cerrar" onclick="cerrarMenu()">✕</button>
+
+        <h2>🤖 RoboEdu</h2>
+
+        <a onclick="inicio()">🏠 Inicio</a>
+
+        <a onclick="categorias()">▦ Categorías</a>
+
+        <a onclick="productos()">🛒 Productos</a>
+
+        <a onclick="mostrarFavoritos()">♡ Favoritos</a>
+
+        <a onclick="mostrarPerfil()">♙ Perfil</a>
+
+    </div>
+
+
+    <main>
+
+
+        <!-- BANNER PRINCIPAL -->
+
+        <section class="banner">
+
+            <div class="banner-texto">
+
+                <h2>
+                    Construye,<br>
+                    aprende e innova
+                </h2>
+
+                <p>
+                    Componentes electrónicos
+                    para tus proyectos de
+                    robótica.
+                </p>
+
+                <button onclick="productos()">
+                    Ver productos
+                </button>
+
+            </div>
+
+            <div class="robot">
+                🤖
+            </div>
+
+        </section>
+
+
+        <!-- BUSCADOR -->
+
+        <div class="buscador">
+
+            <span>🔎</span>
+
+            <input
+                id="buscar"
+                type="text"
+                placeholder="Buscar componentes..."
+                onkeyup="buscarProductos()">
+
+        </div>
+
+
+        <!-- CATEGORÍAS -->
+
+        <section id="categorias">
+
+            <div class="titulo-seccion">
+
+                <h2>Categorías</h2>
+
+                <button onclick="mostrarTodasCategorias()">
+                    Ver todas
+                </button>
+
+            </div>
+
+
+            <div class="categorias">
+
+
+                <button
+                    class="categoria-card"
+                    onclick="filtrar('Sensores')">
+
+                    <span>📡</span>
+
+                    <p>Sensores</p>
+
+                </button>
+
+
+                <button
+                    class="categoria-card"
+                    onclick="filtrar('Microcontroladores')">
+
+                    <span>💻</span>
+
+                    <p>Microcontroladores</p>
+
+                </button>
+
+
+                <button
+                    class="categoria-card"
+                    onclick="filtrar('Motores')">
+
+                    <span>⚙️</span>
+
+                    <p>Motores</p>
+
+                </button>
+
+
+                <button
+                    class="categoria-card"
+                    onclick="filtrar('Actuadores')">
+
+                    <span>🔧</span>
+
+                    <p>Actuadores</p>
+
+                </button>
+
+
+                <button
+                    class="categoria-card"
+                    onclick="filtrar('Kits')">
+
+                    <span>🤖</span>
+
+                    <p>Kits</p>
+
+                </button>
+
+
+                <button
+                    class="categoria-card"
+                    onclick="filtrar('Otros')">
+
+                    <span>🔌</span>
+
+                    <p>Otros</p>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCTOS -->
+
+        <section id="productos">
+
+            <div class="titulo-seccion">
+
+                <h2>Productos destacados</h2>
+
+                <button onclick="mostrarTodosProductos()">
+                    Ver todos
+                </button>
+
+            </div>
+
+            <div
+                id="listaProductos"
+                class="productos">
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- BARRA INFERIOR -->
+
+    <nav class="barra">
+
+        <button
+            class="activo"
+            onclick="inicio()">
+
+            <span>⌂</span>
+
+            Inicio
+
+        </button>
+
+
+        <button onclick="categorias()">
+
+            <span>▦</span>
+
+            Categorías
+
+        </button>
+
+
+        <button onclick="mostrarFavoritos()">
+
+            <span>♡</span>
+
+            Favoritos
+
+        </button>
+
+
+        <button onclick="mostrarPerfil()">
+
+            <span>♙</span>
+
+            Perfil
+
+        </button>
+
+    </nav>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
